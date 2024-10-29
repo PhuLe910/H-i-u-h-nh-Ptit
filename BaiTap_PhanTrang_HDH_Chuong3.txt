@@ -1,0 +1,28 @@
+VD: trang nhớ có kích thước 1024 Byte, độ dài địa chỉ logic 15bit. tính địaa chỉ logic 1500
+Tính số trang và độ dịch trang
+Độ dài đc logic 16bit -> n + m = 16
+Trang nhớ có kích thước 1024B = 2^10
+-> n = 10 -> m = 6
+
+Số trang p = 1500 div 1024 = 1 (chia nguyên)
+Độ dịch o = 1500 mod 1024 = 476(chia dư)
+
+--Lấy m bit cao của địa chỉ => được số thứ tự trang
+--Dựa vào bảng trang, tìm được số thứ tự khung vật lý(k)
+--Địa chỉ vật lý bắt đầu của khung là k * 2^n
+
+VD: Kích thước trang là 1KB. Chuyển địa chỉ logic sang địa chỉ vật lý
+page 0 1 2 3
+Frame 3 2 6 4
+
+3580
+page = 3580 div 1024 = 3 
+-> Frame 4
+Độ dịch trang = 3580 mod 1024 = 508
+Địa chỉ vật lý =  Frame * Kích thước trang + Độ dịch trang = 4 * 1024 + 508 = 4604
+
+1502
+page = 1502 div 1024 = 1
+-> Frame = 2
+Độ dịch trang = 1502 mod 1024 = 478
+Địa chỉ vật lý = 2 * 1024 + 478 = 2526
